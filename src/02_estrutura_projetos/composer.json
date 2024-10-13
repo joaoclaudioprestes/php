@@ -1,0 +1,19 @@
+{
+    "name": "joaop/02_estrutura_projetos",
+    "autoload": {
+        "psr-4": {
+            "Joaop\\02EstruturaProjetos\\": "src/app/"
+        },
+        "files": [
+            "src/app/helpers/constantes.php",
+            "src/app/router/router.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "João Claudio Prestes",
+            "email": "119965861+joaoclaudioprestes@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
