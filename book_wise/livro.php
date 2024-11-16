@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Wise</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
+require 'dados.php';
 
-<body class="bg-stone-900 text-stone-400">
-  <header class="w-full bg-stone-800 py-4">
-    <nav class="mx-auto max-w-screen-lg flex justify-between  px-4 md:pd-0">
-      <div class="font-bold text-xl text-lime-500">Book Wise</div>
-      <ul class="flex gap-4">
-        <li><a href="/" class="text-lime-500 hover:underline font-semibold">Explorar</a></li>
-        <li><a href="/meus-livros.php" class="hover:underline font-semibold">Meus Livros</a></li>
+$id = $_GET['id'];
 
-      </ul>
-      <ul>
-        <li><a href="/login" class="hover:underline font-semibold">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+$filtrado = array_filter(($livros), fn($livro) => $livro['id'] == $id);
 
-  <main class="mx-auto max-w-screen-lg mt-6 px-4 md:pd-0">
-   
-  </main>
-</body>
+$livroSelecionado = array_pop($filtrado);
 
-</html>
+$view = 'livro';
+require 'views/template/app.php';
+
