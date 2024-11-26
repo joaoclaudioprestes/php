@@ -29,7 +29,7 @@ require 'dados.php';
     </nav>
   </header>
 
-  <main class="mx-auto max-w-screen-lg mt-6 px-4 md:pd-0">
+  <main class="mx-auto max-w-screen-lg mt-6 px-4 md:pd-0 mb-16">
     <?php require 'views/' . $view . '.php'; ?>
   </main>
 </body>

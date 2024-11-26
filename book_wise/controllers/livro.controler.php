@@ -11,3 +11,4 @@ if (empty($view)) {
 }
 
 require 'views/template/app.php';
+    
