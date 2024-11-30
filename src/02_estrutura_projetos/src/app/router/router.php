@@ -20,5 +20,16 @@ function router()
 
   $routes = routes();
 
-  $matchedUri = exactMatchUriInArrayRoutes($uri, $routes); 
+  $matchedUri = exactMatchUriInArrayRoutes($uri, $routes);
+
+  if (empty($matchedUri)) {
+    array_filter(
+      $routes,
+      function ($value) use ($uri) {
+        $regex = str_replace('/', '\/', ltrim($value, '/'));
+        return preg_match('/^$regex^/', ltrim($uri, '/'));
+      },
+      ARRAY_FILTER_USE_KEY
+    );
+  }
 }
